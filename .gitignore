@@ -1,0 +1,9 @@
+/target
+**/*.rs.bk
+Cargo.lock
+*.blend1
+*.blend2
+*.obj.tmp
+.DS_Store
+.idea/
+.vscode/

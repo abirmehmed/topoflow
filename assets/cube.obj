@@ -1,0 +1,24 @@
+# Clean Cube - 8 vertices, 6 quads
+# Watertight, manifold, animation-ready
+
+v -1.0 -1.0 -1.0
+v  1.0 -1.0 -1.0
+v  1.0  1.0 -1.0
+v -1.0  1.0 -1.0
+v -1.0 -1.0  1.0
+v  1.0 -1.0  1.0
+v  1.0  1.0  1.0
+v -1.0  1.0  1.0
+
+# Front face (z = -1)
+f 1 2 3 4
+# Back face (z = 1)
+f 6 5 8 7
+# Left face (x = -1)
+f 5 1 4 8
+# Right face (x = 1)
+f 2 6 7 3
+# Top face (y = 1)
+f 4 3 7 8
+# Bottom face (y = -1)
+f 5 6 2 1

@@ -1,0 +1,53 @@
+[package]
+name = "topoflow"
+version = "0.1.0"
+edition = "2021"
+authors = ["TopoFlow Team"]
+description = "High-end retopology tool for animation-ready meshes"
+license = "MIT OR Apache-2.0"
+rust-version = "1.78"
+
+[dependencies]
+# Math & Linear Algebra
+nalgebra = { version = "0.33", features = ["serde"] }
+num-traits = "0.2"
+
+# Mesh I/O
+obj-rs = "0.7"
+
+# CLI
+clap = { version = "4.5", features = ["derive"] }
+
+# Rendering (for future GUI)
+wgpu = "22.0"
+winit = "0.30"
+pollster = "0.3"
+bytemuck = { version = "1.16", features = ["derive"] }
+
+# UI (for future GUI)
+egui = "0.28"
+egui-wgpu = "0.28"
+egui-winit = "0.29"
+
+# Utilities
+thiserror = "1.0"
+anyhow = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+log = "0.4"
+env_logger = "0.11"
+
+# Parallel processing
+rayon = "1.10"
+
+[dev-dependencies]
+criterion = { version = "0.5", features = ["html_reports"] }
+
+[[bench]]
+name = "mesh_benchmark"
+harness = false
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
